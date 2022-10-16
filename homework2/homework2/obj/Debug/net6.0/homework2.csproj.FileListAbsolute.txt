@@ -1,0 +1,15 @@
+/Users/tarasivanov/ОП дз/op-kp23-Ivanov/homework2/homework2/bin/Debug/net6.0/homework2
+/Users/tarasivanov/ОП дз/op-kp23-Ivanov/homework2/homework2/bin/Debug/net6.0/homework2.deps.json
+/Users/tarasivanov/ОП дз/op-kp23-Ivanov/homework2/homework2/bin/Debug/net6.0/homework2.runtimeconfig.json
+/Users/tarasivanov/ОП дз/op-kp23-Ivanov/homework2/homework2/bin/Debug/net6.0/homework2.dll
+/Users/tarasivanov/ОП дз/op-kp23-Ivanov/homework2/homework2/bin/Debug/net6.0/homework2.pdb
+/Users/tarasivanov/ОП дз/op-kp23-Ivanov/homework2/homework2/obj/Debug/net6.0/homework2.csproj.AssemblyReference.cache
+/Users/tarasivanov/ОП дз/op-kp23-Ivanov/homework2/homework2/obj/Debug/net6.0/homework2.GeneratedMSBuildEditorConfig.editorconfig
+/Users/tarasivanov/ОП дз/op-kp23-Ivanov/homework2/homework2/obj/Debug/net6.0/homework2.AssemblyInfoInputs.cache
+/Users/tarasivanov/ОП дз/op-kp23-Ivanov/homework2/homework2/obj/Debug/net6.0/homework2.AssemblyInfo.cs
+/Users/tarasivanov/ОП дз/op-kp23-Ivanov/homework2/homework2/obj/Debug/net6.0/homework2.csproj.CoreCompileInputs.cache
+/Users/tarasivanov/ОП дз/op-kp23-Ivanov/homework2/homework2/obj/Debug/net6.0/homework2.dll
+/Users/tarasivanov/ОП дз/op-kp23-Ivanov/homework2/homework2/obj/Debug/net6.0/refint/homework2.dll
+/Users/tarasivanov/ОП дз/op-kp23-Ivanov/homework2/homework2/obj/Debug/net6.0/homework2.pdb
+/Users/tarasivanov/ОП дз/op-kp23-Ivanov/homework2/homework2/obj/Debug/net6.0/homework2.genruntimeconfig.cache
+/Users/tarasivanov/ОП дз/op-kp23-Ivanov/homework2/homework2/obj/Debug/net6.0/ref/homework2.dll
