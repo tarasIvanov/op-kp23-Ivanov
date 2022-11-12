@@ -3,6 +3,28 @@ class Program
 {
     public static void Main(string[] args)
     {
+        //test cases
+        //x = 1
+        //correct: sin 1 = 0.8414709848;
+        //output of program: 0.8416666666666667
+
+        //x = 0
+        //correct: sin 0 = 0;
+        //output of program: 0
+
+        //x = 2
+        //correct: sin 2 = 0.90929742682;
+        //output of program: 0.9079365079365079
+
+        //x = -1
+        //correct: sin -1 = -0.8414709848;
+        //output of program: -0.8416666666666667
+
+        //x = 3
+        //correct: sin 3 = 0.14112000806;
+        //output of program: 0.1453124999999999
+
+        
         double sin1 = 0;
         int sign = 1;
         long f = 1;

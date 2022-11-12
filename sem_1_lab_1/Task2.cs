@@ -3,6 +3,12 @@ class Program
 {
     public static void Main(string[] args)
     {
+        /*
+         * num = 2 - "simple"
+         * num = 6 - "complex"
+         * num = 0 - "eror"
+         *
+         */
         int num = 0;
 
         Console.WriteLine("Enter num");
@@ -13,14 +19,16 @@ class Program
             if (isSimple(num) == true)
             {
                 Console.WriteLine("Num is simple");
-            } else
+            }
+            else
             {
                 Console.WriteLine("Num is complex");
             }
 
-        } else
+        }
+        else
         {
-            Console.WriteLine("Enter num >= 1");
+            Console.Write("Eror: enter num >= 1");
         }
 
 

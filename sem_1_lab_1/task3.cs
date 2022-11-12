@@ -3,6 +3,17 @@ class Program
 {
     public static void Main(string[] args)
     {
+        /*
+        test cases
+        n = 5 - factorial = 120
+        x = 5, n = 3 - power = 125
+
+        n = 10 - factorial = 3628800
+        x = 9, n = 3 - power = 729
+        x = 5, n = 0 - power = 1
+        */
+
+        
         // This program is slightly optimized for convenience
         int n, x = 0;
         int sum = 1;
