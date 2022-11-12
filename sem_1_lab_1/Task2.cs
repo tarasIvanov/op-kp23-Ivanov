@@ -9,6 +9,7 @@ class Program
          * num = 0 - "eror"
          *
          */
+         
         int num = 0;
 
         Console.WriteLine("Enter num");
