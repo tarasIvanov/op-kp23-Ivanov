@@ -52,7 +52,8 @@ class Program
 
          * 
          */
-        
+
+
         double x0 = 0;
         double xn = 0;
         double n = 0;
@@ -70,19 +71,26 @@ class Program
         Console.WriteLine("Enter n");
         n = Convert.ToDouble(Console.ReadLine());
 
-        x = x0;
-
-        dx = (xn - x0) / n;
-
-        for (double i = 0; i <= n; i++)
+        if (n > 0 && x0 != xn && x0 < xn)
         {
-            Console.WriteLine("x" + i + " = " + x);
+            x = x0;
 
-            y = x * Math.Sin(Math.Sqrt(x + b - 0.0084));
+            dx = (xn - x0) / n;
 
-            Console.WriteLine("y = " + y);
+            for (double i = 0; i <= n; i++)
+            {
+                Console.WriteLine("x" + i + " = " + x);
 
-            x += dx;
+                y = x * Math.Sin(Math.Sqrt(x + b - 0.0084));
+
+                Console.WriteLine("y = " + y);
+
+                x += dx;
+            }
+        }
+        else
+        {
+            Console.WriteLine("Eror");
         }
 
 

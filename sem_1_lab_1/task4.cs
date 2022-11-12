@@ -24,7 +24,6 @@ class Program
         //correct: sin 3 = 0.14112000806;
         //output of program: 0.1453124999999999
 
-        
         double sin1 = 0;
         int sign = 1;
         long f = 1;
@@ -35,7 +34,7 @@ class Program
         //для градусів
         //double m = 90;
         //x = (m * 3.1416) / 180;
-        
+
 
         double sin2 = 1;
         double lim = 0.1;
@@ -43,7 +42,7 @@ class Program
         Console.WriteLine("enter x");
         x = Convert.ToInt32(Console.ReadLine());
 
-        while (Math.Abs((sin2 - sin1)) > lim)
+        while (absAndSubtraction(sin2, sin1) > lim)
         {
             sin2 = sin1;
             sin1 = sin1 + sign * (power(x, p) / factorial(f));
@@ -80,6 +79,18 @@ class Program
         }
 
         return sum;
+    }
+
+    public static double absAndSubtraction(double sin2, double sin1)
+    {
+        if (sin2 - sin1 > 0)
+        {
+            return (sin2 - sin1);
+        }
+        else
+        {
+            return -(sin2 - sin1);
+        }
     }
 }
 
