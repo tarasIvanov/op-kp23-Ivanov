@@ -2,11 +2,104 @@
 
 class Task3
 {
+    /*  Test cases:
+     *  
+     *  Input:
+            apple
+            cSharp
+            pen
+            math
+            phone
+            light
+            zero
+            Cbip
+            Door
+            bear
+            cat
+            path
+            Empty   
+            ASCII
+            iPhone
+
+        Output:
+            apple
+            ASCII
+            bear
+            cat
+            Cbip
+            cSharp
+            Door
+            Empty   
+            iPhone 
+            light
+            math
+            path
+            pen
+            phone
+            zero
+
+
+        Input:
+            apple
+            cSharp
+            pen
+            math
+            phone
+            light
+            zero
+            Cbip
+            Door
+            bear
+            cat
+            path
+            Empty   
+            ASCII
+            iPhone 
+            Agree   
+            smart
+            good
+            big
+            Boy
+            Ugly
+            Defense
+
+        Output:
+            Agree   
+            apple
+            ASCII
+            bear
+            big
+            Boy
+            cat
+            Cbip
+            cSharp
+            Defense
+            Door
+            Empty   
+            good
+            iPhone 
+            light
+            math
+            path
+            pen
+            phone
+            smart
+            Ugly
+            zero
+
+    */
+
+
+
+    const int beginBigLetters = 65;
+    const int endBigLetters = 90;
+    const int bigToSmall = 32;
+
+    const int size = 40;
+
     public static void Main(string[] args)
     {
-        int n = 40;
-
-        string[] words = new string[n];
+        string[] words = new string[size];
 
         int numOfWords = 0;
 
@@ -48,14 +141,14 @@ class Task3
             el1 = Convert.ToInt32(words[i][0]);
             el2 = Convert.ToInt32(words[i + 1][0]);
 
-            if (el1 >= 65 && el1 <= 90)
+            if (el1 >= beginBigLetters && el1 <= endBigLetters)
             {
-                el1 += 32;
+                el1 += bigToSmall;
             }
 
-            if (el2 >= 65 && el2 <= 90)
+            if (el2 >= beginBigLetters && el2 <= endBigLetters)
             {
-                el2 += 32;
+                el2 += bigToSmall;
             }
 
             if (el1 > el2)
@@ -73,14 +166,14 @@ class Task3
                     el1 = Convert.ToInt32(words[i][letter]);
                     el2 = Convert.ToInt32(words[i + 1][letter]);
 
-                    if (el1 >= 65 && el1 <= 90)
+                    if (el1 >= beginBigLetters && el1 <= endBigLetters)
                     {
-                        el1 += 32;
+                        el1 += bigToSmall;
                     }
 
-                    if (el2 >= 65 && el2 <= 90)
+                    if (el2 >= beginBigLetters && el2 <= endBigLetters)
                     {
-                        el2 += 32;
+                        el2 += bigToSmall;
                     }
 
                     if (el1 > el2)
