@@ -2,6 +2,22 @@
 
 class Task6
 {
+    /*
+     * Test cases:
+     * 
+     * Case 1:
+     *    Input:
+              First name: 2, Last name: 2, 93
+              First name: 3, Last name: 3, 97
+              First name: 4, Last name: 4, 82
+
+           Output:
+              First name: 3, Last name: 3, 97
+              Num of best students is: 1
+     * 
+     */
+
+
     public static void Main(string[] args)
     {
         Random random = new Random();
