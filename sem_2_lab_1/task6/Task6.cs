@@ -120,8 +120,13 @@ class Task6
 
             if (numOfBestStudents > 0)
             {
-                Console.Write("Num of best students is: " + numOfBestStudents);
-                bw.Write("Num of best students is: " + numOfBestStudents);
+                Console.Write("Num of students which score is begger 95 is: " + numOfBestStudents);
+                bw.Write("Num of students which score is begger 95 is: " + numOfBestStudents);
+            }
+            else
+            {
+                Console.Write("Here is not students which score is bigger 95");
+                bw.Write("Here is not students which score is bigger 95");
             }
 
             br.Close();
