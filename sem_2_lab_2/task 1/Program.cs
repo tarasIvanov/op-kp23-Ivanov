@@ -57,6 +57,10 @@ namespace ForAll
 
                         for (int i = 0; i < counter; i++)
                         {
+                            Console.ForegroundColor = ConsoleColor.Green;
+                            Console.Write($"Id: {i + 1}\t");
+                            Console.ForegroundColor = ConsoleColor.White;
+
                             salaryNotes[i].PrintCharacteristics();
                         }
 
