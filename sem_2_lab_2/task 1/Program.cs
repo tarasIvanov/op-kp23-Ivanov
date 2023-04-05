@@ -4,6 +4,16 @@ using System.Globalization;
 
 namespace ForAll
 {
+    /* Test case:
+        Input:
+            SalaryNote salaryNote1 = new SalaryNote("arnold", 1000, 300);
+            SalaryNote salaryNote2 = new SalaryNote("mark", 1300, 700);
+
+        Output:
+            Name: arnold    Salary: 1000    Withheld: 300   Received: 700
+            Name: mark      Salary: 1300    Withheld: 700   Received: 600
+
+    */
     class Program
     {
         const int n = 10;
@@ -31,8 +41,11 @@ namespace ForAll
                 {
                     case 1:
                         salaryNotes[counter] = CreateNewNote();
+
                         counter++;
+
                         break;
+
                     case 2:
                         if (counter == 0)
                         {
@@ -46,9 +59,13 @@ namespace ForAll
                         {
                             salaryNotes[i].PrintCharacteristics();
                         }
+
                         break;
+
                     case 3:
+                        Console.WriteLine("Goodbye");
                         return;
+
                     default:
                         Console.ForegroundColor = ConsoleColor.Red;
                         Console.WriteLine("Wrong digit");
