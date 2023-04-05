@@ -4,14 +4,19 @@ using System.Globalization;
 
 namespace ForAll
 {
+    /*Test case:
+              Input:
+                  notes.AddNote(new SalaryNote("artur", 1000, 300));
+                  notes.AddNote(new SalaryNote("marci", 1200, 200));
+               Output:
+                   Id: 1   Name: artur     Salary: 1000    Withheld: 300   Received: 700
+                   Id: 2   Name: marci     Salary: 1200    Withheld: 200   Received: 1000
+    */
     class Program
     {
         public static void Main(string[] args)
         {
             Notes notes = new Notes();
-
-            notes.AddNote(new SalaryNote("artur", 1000, 300));
-            notes.AddNote(new SalaryNote("marci", 1200, 200));
 
             int digit = 0;
 
