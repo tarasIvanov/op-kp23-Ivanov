@@ -6,6 +6,26 @@ using System.Xml.Linq;
 
 class Program
 {
+    /*Test case:
+     * Case 1:
+         * Input:
+            Vector vector1 = new Vector(-5, 0, 1, 0, 7, 1, 2, 10);
+            Vector vector2 = new Vector(1, 0, 4, -10, 2, 7, 9);
+           Output:
+            The sum of the negative elements of two vectors: -15
+            Product of elements of two vectors with even numbers: -5040
+            The number of elements of two vectors equal to 0: 3
+
+        Case 2:
+            Input:
+                Vector vector1 = new Vector(0, 0, 1, 0, 7, 1, 2, 10);
+                Vector vector2 = new Vector(1, 0, 4, -10, 2, 7, 9);
+            Output:
+                The sum of the negative elements of two vectors: -10
+                Product of elements of two vectors with even numbers: 0
+                The number of elements of two vectors equal to 0: 4
+    */
+
     public static void Main(string[] args)
     {
         Vector vector1 = new Vector(-5, 0, 1, 0, 7, 1, 2, 10);
