@@ -3,7 +3,15 @@ namespace Computer_Shop
 {
 	class Phone : Mobile
 	{
-        public Phone();
+        public Phone(MobileDTO mobileDTO)
+        {
+            SetNewCharacteristics(mobileDTO);
+        }
+
+        public Phone()
+        {
+
+        }
     }
 }
 

@@ -1,0 +1,9 @@
+1)Show a basket
+2)Buy a product
+3)Show a list of purchased products
+4)Return a product
+5)Searching by categories
+6)Show PC is good for GTA5
+7)Show Mobile is good for PUBG
+8)Show customer info	
+9)Change customer info

@@ -1,0 +1,5 @@
+1)Search by type
+2)Search by price
+3)Search by producer
+4)Search by country
+5)Search by color

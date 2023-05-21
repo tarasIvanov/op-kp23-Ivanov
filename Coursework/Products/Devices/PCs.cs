@@ -7,13 +7,40 @@ namespace Computer_Shop
         public OperationSystem oS { get; set; }
         public double ProcessorSpeedInGHz { get; set; }
 
-        public bool IsGoodForGTA5();
+        //public OperationSystem oS { get { return oS; } set { if (Enum.IsDefined(typeof(OperationSystem), value)) oS = value; } }
+        //public double ProcessorSpeedInGHz { get { return ProcessorSpeedInGHz; } set { if (value > 0 && value <= double.MaxValue) ProcessorSpeedInGHz = value; } }
 
-        public void SetNewCharacteristics();
+        public bool IsGoodForGTA5()
+        {
+            if (ProcessorSpeedInGHz >= 2 && MemoryinGB >= 200 && oS != OperationSystem.MacOC)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
 
-        public override string ShowParentsTypeOfProduct();
+        public void SetNewCharacteristics(PCsDTO pCsDTO)
+        {
+            base.SetNewCharacteristics(pCsDTO);
 
-        public override void PrintCharacteristics();
+            oS = pCsDTO.oS;
+            ProcessorSpeedInGHz = pCsDTO.ProcessorSpeedInGHz;
+        }
+
+        public override string ShowParentsTypeOfProduct()
+        {
+            return TypesOfProduct.PCs.ToString();
+        }
+
+        public override void PrintCharacteristics()
+        {
+            base.PrintCharacteristics();
+
+            ChangeCollorOfSring($"OS: {oS}\tProcessor speed: {ProcessorSpeedInGHz}GHz", ConsoleColor.DarkBlue);
+        }
     }
 }
 
