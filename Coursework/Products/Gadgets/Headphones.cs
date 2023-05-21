@@ -4,7 +4,16 @@ namespace Computer_Shop
 {
     class Headphones : Gadget
     {
-        public Headphones();
+        public Headphones(GadgetDTO gadgetDTO)
+        {
+            SetNewCharacteristics(gadgetDTO);
+        }
+
+        public Headphones()
+        {
+
+        }
+
     }
 }
 

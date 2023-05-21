@@ -6,11 +6,26 @@ namespace Computer_Shop
 	{
 		public double lengthOfWireInCM { get; set; }
 
-        public void SetNewCharacteristics();
+        //public double lengthOfWireInCM { get { return lengthOfWireInCM; } set { if (value > 0 && value <= int.MaxValue) lengthOfWireInCM = value; } }
 
-        public override string ShowParentsTypeOfProduct();
+        public void SetNewCharacteristics(GadgetDTO gadgetDTO)
+        {
+            SetNewDefaultCharacteristics(gadgetDTO);
 
-        public override void PrintCharacteristics();
+            lengthOfWireInCM = gadgetDTO.lengthOfWireInCM;
+        }
+
+        public override string ShowParentsTypeOfProduct()
+        {
+            return TypesOfProduct.Gadget.ToString();
+        }
+
+        public override void PrintCharacteristics()
+        {
+            base.PrintCharacteristics();
+
+            ChangeCollorOfSring($"Wire: {lengthOfWireInCM}CM", ConsoleColor.DarkBlue);
+        }
     }
 }
 

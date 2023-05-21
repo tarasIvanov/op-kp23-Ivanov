@@ -4,7 +4,15 @@ namespace Computer_Shop
 {
 	class Mouse : Gadget
 	{
-        public Mouse();
+        public Mouse(GadgetDTO gadgetDTO)
+        {
+            SetNewCharacteristics(gadgetDTO);
+        }
+
+        public Mouse()
+        {
+
+        }
     }
 }
 

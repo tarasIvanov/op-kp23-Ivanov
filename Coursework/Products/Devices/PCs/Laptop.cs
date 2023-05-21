@@ -4,7 +4,15 @@ namespace Computer_Shop
 {
 	class Laptop : PCs
 	{
-        public Laptop();
+        public Laptop(PCsDTO pCsDTO)
+        {
+            SetNewCharacteristics(pCsDTO);
+        }
+
+        public Laptop()
+        {
+
+        }
     }
 }
 
