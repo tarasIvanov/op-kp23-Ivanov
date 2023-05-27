@@ -23,59 +23,67 @@ namespace ForAll
             //queue.Dequeue();
             //queue.Dequeue();
 
-            RandomisedQueueNode<int> queue = new RandomisedQueueNode<int>();
+            //RandomisedQueueNode<int> queue = new RandomisedQueueNode<int>();
 
-            queue.Enqueue(5);
-            queue.Enqueue(3);
-            queue.Enqueue(2);
-            queue.Enqueue(7);
-            queue.Enqueue(10);
+            //queue.Enqueue(5);
+            //queue.Enqueue(3);
+            //queue.Enqueue(2);
+            //queue.Enqueue(7);
+            //queue.Enqueue(10);
 
-            IIterator<int> iterator = queue.iterator();
+            //IIterator<int> iterator = queue.iterator();
 
-            while (iterator.HasNext)
-            {
-                Console.WriteLine(iterator.MoveNext());
-            }
+            //while (iterator.HasNext)
+            //{
+            //    Console.WriteLine(iterator.MoveNext());
+            //}
 
-            //Console.WriteLine("Unit test: " + UnitTest());
+            Console.WriteLine("Unit test: " + UnitTestNumOfEll());
+            Console.WriteLine("Unit test: " + UnitTestHaveChangedEll());
         }
 
-        public static bool UnitTest()
+        public static bool UnitTestNumOfEll()
         {
-            const int size = 4;
+            RandomisedQueueNode<int> queueNode = new RandomisedQueueNode<int>();
 
-            string[] expectedArr = { "string 4", "string 3", "string 2", "string 1" };
+            queueNode.Enqueue(1);
+            queueNode.Enqueue(2);
+            queueNode.Enqueue(3);
+            queueNode.Enqueue(4);
 
-            string[] arr = new string[size];
-            int counter = 0;
+            int numOfEll = 4;
 
-            bool res = true;
+            return numOfEll == queueNode.Count;
+        }
 
-            DequeForArr<string> deque2 = new DequeForArr<string>(5);
+        public static bool UnitTestHaveChangedEll()
+        {
+            //Тут ми беремо 2 елементи, і дивимось чи вони різні, цим самим переконуємось чи працює ітератор
+            int num1 = 0, num2 = 0;
 
-            deque2.AddFirst("string 2");
-            deque2.AddLast("string 3");
-            deque2.AddLast("string 4");
-            deque2.AddFirst("string 1");
+            RandomisedQueueNode<int> queueNode = new RandomisedQueueNode<int>();
+            
+            queueNode.Enqueue(1);
+            queueNode.Enqueue(2);
+            queueNode.Enqueue(3);
+            queueNode.Enqueue(4);
 
-            IIterator<string> iterator = deque2.iterator();
+            IIterator<int> iterator = queueNode.iterator();
 
-            while (iterator.HasNext)
+            for (int i = 0; i < 2; i++)
             {
-                arr[counter] = iterator.MoveNext();
-                counter++;
-            }
-
-            for (int i = 0; i < size; i++)
-            {
-                if (arr[i] != expectedArr[i])
+                if (i == 0)
                 {
-                    res = false;
+                    num1 = iterator.MoveNext();
+                }
+
+                if (i == 1)
+                {
+                    num2 = iterator.MoveNext();
                 }
             }
 
-            return res;
+            return !(num1 == num2);
         }
     }
 }
