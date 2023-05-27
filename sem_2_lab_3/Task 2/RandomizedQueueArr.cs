@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace ForAll
 {
-	public class RandomizedQueue<Item> : IIterator<Item>
+	public class RandomizedQueueArr<Item> : IIterator<Item>
 	{
         Random random = new Random();
 
@@ -20,7 +20,7 @@ namespace ForAll
         private int counterIterator = 0;
 
         // construct an empty randomized queue
-        public RandomizedQueue(int sizeOfArr)
+        public RandomizedQueueArr(int sizeOfArr)
         {
             arr = new Item[sizeOfArr];
         }

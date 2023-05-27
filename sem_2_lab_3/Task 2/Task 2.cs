@@ -8,25 +8,28 @@ namespace ForAll
     {
         public static void Main(string[] args)
         {
-            RandomizedQueue<int> queue = new RandomizedQueue<int>(10);
+            //RandomizedQueueArr<int> queue = new RandomizedQueueArr<int>(10);
+
+            //queue.Enqueue(5);
+            //queue.Enqueue(3);
+            //queue.Enqueue(2);
+            //queue.Enqueue(7);
+            //queue.Enqueue(10);
+
+            //Console.WriteLine("-:" + queue.Sample());
+            //Console.WriteLine("-:" + queue.Sample());
+
+            //queue.Dequeue();
+            //queue.Dequeue();
+            //queue.Dequeue();
+
+            RandomisedQueueNode<int> queue = new RandomisedQueueNode<int>();
 
             queue.Enqueue(5);
             queue.Enqueue(3);
             queue.Enqueue(2);
             queue.Enqueue(7);
             queue.Enqueue(10);
-
-            Console.WriteLine("-:" + queue.Sample());
-            Console.WriteLine("-:" + queue.Sample());
-
-            queue.Dequeue();
-            queue.Dequeue();
-            queue.Dequeue();
-
-            Console.WriteLine("-:" + queue.Sample());
-            Console.WriteLine("-:" + queue.Sample());
-
-            Console.WriteLine("-:" + queue.Sample());
 
             IIterator<int> iterator = queue.iterator();
 
@@ -36,7 +39,6 @@ namespace ForAll
             }
 
             //Console.WriteLine("Unit test: " + UnitTest());
-
         }
 
         public static bool UnitTest()
