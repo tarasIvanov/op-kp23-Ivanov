@@ -10,7 +10,7 @@ namespace ForAll
         private int Count = 0;
         private int CapaciryOfArr;
 
-        Item _currentItem;
+        private Item _currentItem;
 
         private int counterIterator = 0;
 
