@@ -59,8 +59,7 @@ namespace Computer_Shop
 
                             break;
                         default:
-                            ChangeCollorOfSring("Eror(typeOfGadget)", ConsoleColor.Red);
-                            return;
+                            throw new ArgumentOutOfRangeException("Eror(typeOfGadget)");
                     }
 
                     break;
@@ -97,8 +96,7 @@ namespace Computer_Shop
 
                             break;
                         default:
-                            ChangeCollorOfSring("Eror(typeOfMobileDevises)", ConsoleColor.Red);
-                            return;
+                            throw new ArgumentOutOfRangeException("Eror(typeOfMobileDevises)");
                     }
 
                     break;
@@ -135,14 +133,12 @@ namespace Computer_Shop
 
                             break;
                         default:
-                            ChangeCollorOfSring("Eror(typeOfMobileDevises)", ConsoleColor.Red);
-                            return;
+                            throw new ArgumentOutOfRangeException("Eror(typeOfMobileDevises)");
                     }
                     break;
 
                 default:
-                    ChangeCollorOfSring("Eror(typeOfProduct)", ConsoleColor.Red);
-                    return;
+                    throw new ArgumentOutOfRangeException("Eror(typeOfProduct)");
             }
         }
 
@@ -159,27 +155,23 @@ namespace Computer_Shop
 
                     break;
                 case 1:
-                    SetNewCountry(product);
+                    SetNewCountryAndProducer(product);
 
                     break;
                 case 2:
-                    SetNewProducer(product);
-
-                    break;
-                case 3:
                     SetNewPrice(product);
 
                     break;
-                case 4:
+                case 3:
                     SetNewGuarantee(product);
 
                     break;
-                case 5:
+                case 4:
                     SetNewColor(product);
 
                     break;
 
-                case 6:
+                case 5:
                     if (product is Gadget gadget)
                     {
                         gadget = (Gadget)Basket._products[numberInBasket];
@@ -192,7 +184,7 @@ namespace Computer_Shop
 
                     break;
 
-                case 7:
+                case 6:
                     if (product is Device device)
                     {
                         device = (Device)Basket._products[numberInBasket];
@@ -205,7 +197,7 @@ namespace Computer_Shop
 
                     break;
 
-                case 8:
+                case 7:
                     if (product is Device device2)
                     {
                         device2 = (Device)Basket._products[numberInBasket];
@@ -218,7 +210,7 @@ namespace Computer_Shop
 
                     break;
 
-                case 9:
+                case 8:
                     if (product is PCs pCs)
                     {
                         pCs = (PCs)Basket._products[numberInBasket];
@@ -231,7 +223,7 @@ namespace Computer_Shop
 
                     break;
 
-                case 10:
+                case 9:
                     if (product is PCs pCs2)
                     {
                         pCs2 = (PCs)Basket._products[numberInBasket];
@@ -244,7 +236,7 @@ namespace Computer_Shop
 
                     break;
 
-                case 11:
+                case 10:
                     if (product is Mobile mobile)
                     {
                         mobile = (Mobile)Basket._products[numberInBasket];
@@ -257,7 +249,7 @@ namespace Computer_Shop
 
                     break;
 
-                case 12:
+                case 11:
                     if (product is Mobile mobile2)
                     {
                         mobile2 = (Mobile)Basket._products[numberInBasket];
@@ -315,7 +307,7 @@ namespace Computer_Shop
                 else
                 {
                     ChangeCollorOfSring("Enter display size(in Inches) of product", ConsoleColor.Cyan);
-                    DisplaySize = int.Parse(Console.ReadLine());
+                    DisplaySize = double.Parse(Console.ReadLine());
                 }
             }
         }
@@ -345,7 +337,7 @@ namespace Computer_Shop
         {
             if (Enum.IsDefined(typeof(OperationSystem), (int)operationSystem))
             {
-                pc.oS = operationSystem;
+                pc.OS = operationSystem;
 
                 Console.WriteLine();
 
@@ -365,7 +357,7 @@ namespace Computer_Shop
 
                 if (Enum.IsDefined(typeof(OperationSystem), (OperationSystem)value))
                 {
-                    pc.oS = (OperationSystem)value;
+                    pc.OS = (OperationSystem)value;
 
                     Console.WriteLine();
 
@@ -452,7 +444,7 @@ namespace Computer_Shop
             {
                 if (lengthOfWire > 0 && lengthOfWire <= int.MaxValue)
                 {
-                    gadget.lengthOfWireInCM = lengthOfWire;
+                    gadget.LengthOfWireInCM = lengthOfWire;
 
                     Console.WriteLine();
 
@@ -587,8 +579,7 @@ namespace Computer_Shop
         public void SetBaseCharacteristics(Product product)
         {
             SetNewName(product);
-            SetNewProducer(product);
-            SetNewCountry(product);
+            SetNewCountryAndProducer(product);
             SetNewPrice(product);
             SetNewGuarantee(product);
             SetNewColor(product);
@@ -627,7 +618,7 @@ namespace Computer_Shop
                     ChangeCollorOfSring("Number is out the diapasone", ConsoleColor.Red);
                 }
             }
-        } 
+        }
 
         public void SetNewGuarantee(Product product, int timeOfGuaranteeInDays = -1)
         {
@@ -669,46 +660,13 @@ namespace Computer_Shop
             }
         }
 
-        public void SetNewProducer(Product product, Producer producer = 0)
-        {
-            if (Enum.IsDefined(typeof(Producer), (int)producer))
-            {
-                product.Producer = producer;
-
-                Console.WriteLine();
-
-                return;
-            }
-
-            int value;
-
-            PrintEnum(producer);
-
-            while (true)
-            {
-                ChangeCollorOfSring("Enter producer of product(number)", ConsoleColor.Cyan);
-                value = int.Parse(Console.ReadLine());
-
-                if (Enum.IsDefined(typeof(Producer), value))
-                {
-                    product.Producer = (Producer)value;
-
-                    Console.WriteLine();
-
-                    return;
-                }
-                else
-                {
-                    ChangeCollorOfSring("Number is out the diapasone", ConsoleColor.Red);
-                }
-            }
-        }
-
-        public void SetNewCountry(Product product, Country country = 0)
+        public void SetNewCountryAndProducer(Product product, Country country = 0)
         {
             if (Enum.IsDefined(typeof(Country), (int)country))
             {
                 product.Country = country;
+
+                product.SetNewProducer();
 
                 Console.WriteLine();
 
@@ -727,6 +685,8 @@ namespace Computer_Shop
                 if (Enum.IsDefined(typeof(Country), value))
                 {
                     product.Country = (Country)value;
+
+                    product.SetNewProducer();
 
                     Console.WriteLine();
 

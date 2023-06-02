@@ -12,7 +12,7 @@ namespace Computer_Shop
         Ronaldo,
         Nun_Swed,
         Pizzes,
-        Haaga
+        Depay
     }
 }
 

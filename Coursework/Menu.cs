@@ -72,14 +72,14 @@ namespace Computer_Shop
 
                         break;
                     default:
-                        break;
+                        throw new ArgumentOutOfRangeException("Eror - start menu");
                 }
             }
 
             
         }
 
-
+        
         private static void AdminMenu(Admin admin)
         {
             ConsoleKey key = 0;
@@ -119,8 +119,7 @@ namespace Computer_Shop
 
                         break;
                     default:
-                        ChangeCollorOfSring("Eror(admin menu)", ConsoleColor.Red);
-                        break;
+                        throw new ArgumentOutOfRangeException("Eror - admin menu");
                 }
             }
         }
@@ -197,8 +196,7 @@ namespace Computer_Shop
 
                         break;
                     default:
-                        ChangeCollorOfSring("Eror(customer menu)", ConsoleColor.Red);
-                        break;
+                        throw new ArgumentOutOfRangeException("Eror - customer menu");
                 }
             }
         }
@@ -268,7 +266,7 @@ namespace Computer_Shop
                         if (activePosition > 0)
                         {
                             Console.Clear();
-
+                            
                             activePosition--;
 
                             PrintList(list, activePosition);
@@ -289,20 +287,19 @@ namespace Computer_Shop
                         break;
 
                     case ConsoleKey.Enter:
-
                         Console.Clear();
 
                         selectedItem = activePosition;
                         return;
 
                     case ConsoleKey.Escape:
-
                         Console.Clear();
 
                         key = tempKey;
                         return;
 
                     default:
+                        ChangeCollorOfSring("Eror - select key", ConsoleColor.Red);
                         break;
                 }
             }

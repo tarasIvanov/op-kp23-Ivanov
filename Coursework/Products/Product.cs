@@ -6,34 +6,53 @@ namespace Computer_Shop
 {
     abstract class Product
     {
-        public string Name { get; set; }
-        public Producer Producer { get; set; }
-        public Country Country { get; set; }
-        public int Price { get; set; }
-        public int TimeOfGuaranteeInDays { get; set; }
-        public Color Color { get; set; }
+        private string _name;
+        private Producer _producer;
+        private Country _country;
+        private int _price;
+        private int _timeOfGuaranteeInDays;
+        private Color _color;
 
-        //public string Name { get { return Name; } set { if (value.Length > 2) Name = value; } }
-        //public Producer Producer { get { return Producer; } set { if (Enum.IsDefined(typeof(Producer), value)) Producer = value; } }
-        //public Country Country { get { return Country; } set { if (Enum.IsDefined(typeof(Country), value)) Country = value; } }
-        //public int Price { get { return Price; } set { if (value > 0 && value <= int.MaxValue) Price = value; } }
-        //public int TimeOfGuaranteeInDays { get { return TimeOfGuaranteeInDays; } set { if (value > 0 && value <= int.MaxValue) TimeOfGuaranteeInDays = value; } }
-        //public Color Color { get { return Color; } set { if (Enum.IsDefined(typeof(Color), value)) Color = value; } }
+        public string Name { get => _name;  set { if (value.Length >= 2) { _name = value; return; } _name = $"{value}00"; } }
+        public Producer Producer { get => _producer; }
+        public Country Country { get => _country; set { if (Enum.IsDefined(typeof(Country), value)) { _country = value; return; } } }
+        public int Price { get => _price; set { if (value > 0 && value <= int.MaxValue) { _price = value; return; } _price = 0; } }
+        public int TimeOfGuaranteeInDays { get => _timeOfGuaranteeInDays; set { if (value > 0 && value <= int.MaxValue) { _timeOfGuaranteeInDays = value; return; } _timeOfGuaranteeInDays = 0; } }
+        public Color Color { get => _color; set { if (Enum.IsDefined(typeof(Color), value)) { _color = value; return; } _color = Color.Black; } }
+
+        public Dictionary<Country, Producer> _countries_producers { get; protected set; }
+
+        public Product()
+        {
+            _countries_producers = new Dictionary<Country, Producer>();
+
+            _countries_producers.Add(Country.England, Producer.Grinch);
+            _countries_producers.Add(Country.Ukraine, Producer.Ne_Pan_Polak);
+            _countries_producers.Add(Country.Poland, Producer.Pan_Polak);
+            _countries_producers.Add(Country.German, Producer.Gagaga);
+            _countries_producers.Add(Country.Spain, Producer.BigBob);
+            _countries_producers.Add(Country.France, Producer.Orevua);
+            _countries_producers.Add(Country.Portugal, Producer.Ronaldo);
+            _countries_producers.Add(Country.Sweden, Producer.Nun_Swed);
+            _countries_producers.Add(Country.Italy, Producer.Pizzes);
+            _countries_producers.Add(Country.Netherlands, Producer.Depay);
+        }
 
         protected void SetNewDefaultCharacteristics(ProductDTO productDTO)
         {
             Name = productDTO.Name;
-            Producer = productDTO.Producer;
             Country = productDTO.Country;
             Price = productDTO.Price;
-            TimeOfGuaranteeInDays = productDTO.timeOfGuaranteeInDays;
-            Color = productDTO.color;
+            TimeOfGuaranteeInDays = productDTO.TimeOfGuaranteeInDays;
+            Color = productDTO.Color;
+
+            SetNewProducer();
         }
 
         public virtual void PrintCharacteristics()
         {
             ChangeCollorOfSring($"Name: {Name}\tProducer: {Producer}\tCountry: {Country} \tPrice: {Price}", ConsoleColor.Yellow);
-            ChangeCollorOfSring($"Guarantee: { TimeOfGuaranteeInDays} days\tCollor: { Color}", ConsoleColor.DarkCyan);
+            ChangeCollorOfSring($"Guarantee: {TimeOfGuaranteeInDays} days\tCollor: {Color}", ConsoleColor.DarkCyan);
         }
 
         public bool CheckGuarantee(int daysAfterBying)
@@ -49,12 +68,14 @@ namespace Computer_Shop
             return false;
         }
 
-        public string ShowTypeOfProduct()
-        {
-            return GetType().Name;
-        }
+        public string ShowTypeOfProduct() => GetType().Name;
 
         public abstract string ShowParentsTypeOfProduct();
+
+        public void SetNewProducer()
+        {
+            _countries_producers.TryGetValue(this.Country, out _producer);
+        }
 
         protected void ChangeCollorOfSring(string str, ConsoleColor firstCollor, bool newLine = true)
         {

@@ -4,27 +4,24 @@ namespace Computer_Shop
 {
 	abstract class Gadget : Product
 	{
-		public double lengthOfWireInCM { get; set; }
+        private double _lengthOfWireInCM;
 
-        //public double lengthOfWireInCM { get { return lengthOfWireInCM; } set { if (value > 0 && value <= int.MaxValue) lengthOfWireInCM = value; } }
+        public double LengthOfWireInCM { get => _lengthOfWireInCM; set { if (value > 0 && value <= int.MaxValue) { _lengthOfWireInCM = value; return; } _lengthOfWireInCM = 0; } }
 
         public void SetNewCharacteristics(GadgetDTO gadgetDTO)
         {
             SetNewDefaultCharacteristics(gadgetDTO);
 
-            lengthOfWireInCM = gadgetDTO.lengthOfWireInCM;
+            LengthOfWireInCM = gadgetDTO.lengthOfWireInCM;
         }
 
-        public override string ShowParentsTypeOfProduct()
-        {
-            return TypesOfProduct.Gadget.ToString();
-        }
+        public override string ShowParentsTypeOfProduct() => TypesOfProduct.Gadget.ToString();
 
         public override void PrintCharacteristics()
         {
             base.PrintCharacteristics();
 
-            ChangeCollorOfSring($"Wire: {lengthOfWireInCM}CM", ConsoleColor.DarkBlue);
+            ChangeCollorOfSring($"Wire: {LengthOfWireInCM}CM", ConsoleColor.DarkBlue);
         }
     }
 }

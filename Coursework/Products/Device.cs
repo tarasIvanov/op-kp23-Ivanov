@@ -4,11 +4,11 @@ namespace Computer_Shop
 {
 	abstract class Device : Product
 	{
-        public double WageInKG { get; set; }
-        public double MemoryinGB { get; set; }
+        private double _wageInKG;
+        private double _memoryinGB;
 
-        //public double WageInKG { get { return WageInKG; } set { if (value > 0 && value <= double.MaxValue) WageInKG = value; } }
-        //public double MemoryinGB { get { return MemoryinGB; } set { if (value > 0 && value <= double.MaxValue) MemoryinGB = value; } }
+        public double WageInKG { get => _wageInKG; set { if (value > 0 && value <= double.MaxValue) { _wageInKG = value; return; } _wageInKG = 0; } }
+        public double MemoryinGB { get => _memoryinGB; set { if (value > 0 && value <= double.MaxValue) { _memoryinGB = value; return; } _memoryinGB = 0; } }
 
         public void SetNewCharacteristics(DeviceDTO deviceDTO)
         {

@@ -5,23 +5,20 @@ namespace Computer_Shop
 {
 	class ProductDTO
 	{
-        public ProductDTO(string Name, Producer Producer, Country Country, int Price, int timeOfGuaranteeInDays, Color color)
+        public ProductDTO(string Name, Country Country, int Price, int timeOfGuaranteeInDays, Color color)
         {
             this.Name = Name;
-            this.Producer = Producer;
             this.Country = Country;
             this.Price = Price;
-            this.timeOfGuaranteeInDays = timeOfGuaranteeInDays;
-            this.color = color;
+            this.TimeOfGuaranteeInDays = timeOfGuaranteeInDays;
+            this.Color = color;
         }
 
         public string Name { get; protected set; }
-        public Producer Producer { get; protected set; }
         public Country Country { get; protected set; }
         public int Price { get; protected set; }
-        public int timeOfGuaranteeInDays { get; protected set; }
-        public Color color { get; protected set; }
-
+        public int TimeOfGuaranteeInDays { get; protected set; }
+        public Color Color { get; protected set; }
     }
 }
 
