@@ -54,7 +54,7 @@
 
         public void ReturnProduct()
         {
-            int daysAfterBying = 0, i = 0;
+            int daysAfterBying = 0;
 
             Product product = GetProductForReturning();
 
@@ -238,6 +238,7 @@
             while (true)
             {
                 ChangeCollorOfSring("Enter number of product you want to buy", ConsoleColor.Cyan);
+
                 num = int.Parse(Console.ReadLine());
 
                 if (num > 0 && num <= Basket.CounterOfProducts)
@@ -260,6 +261,8 @@
             while (true)
             {
                 ChangeCollorOfSring("Enter number of product you want to return", ConsoleColor.Cyan);
+
+
                 num = int.Parse(Console.ReadLine());
 
                 if (num > 0 && num <= _numOfBoughtProducts)

@@ -3,11 +3,11 @@ namespace Computer_Shop
 {
 	abstract class Mobile : Device
 	{
-        public double DisplayInInches { get; set; }
-        public double BatteryInMaH { get; set; }
+        private double _displayInInches;
+        private double _batteryInMaH;
 
-        //public double DisplayInInches { get { return DisplayInInches; } set { if (value > 0 && value <= double.MaxValue) DisplayInInches = value; } }
-        //public double BatteryInMaH { get { return BatteryInMaH; } set { if (value > 0 && value <= double.MaxValue) BatteryInMaH = value; } }
+        public double DisplayInInches { get => _displayInInches; set { if (value > 0 && value <= double.MaxValue) { _displayInInches = value; return; } _displayInInches = 0; } }
+        public double BatteryInMaH { get => _batteryInMaH; set { if (value > 0 && value <= double.MaxValue) { _batteryInMaH = value; return; } _batteryInMaH = 0; } }
 
         public bool IsGoodForPubg()
         {
@@ -29,10 +29,7 @@ namespace Computer_Shop
             BatteryInMaH = mobileDTO.BatteryInMaH;
         }
 
-        public override string ShowParentsTypeOfProduct()
-        {
-            return TypesOfProduct.Mobile.ToString();
-        }
+        public override string ShowParentsTypeOfProduct() => TypesOfProduct.Mobile.ToString();
 
         public override void PrintCharacteristics()
         {
