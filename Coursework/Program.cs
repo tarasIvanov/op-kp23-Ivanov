@@ -6,6 +6,10 @@ namespace Computer_Shop
     {
         static void Main(string[] args)
         {
+            UnitTest unitTest = new UnitTest();
+
+            unitTest.CheckAllTests();
+
             SetDefaultBasket();
 
             Menu.StartMenu();
