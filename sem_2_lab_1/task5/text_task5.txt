@@ -1,0 +1,2 @@
+Read a CSV file that is specified in Task 4, Create a binary file that is based on the CSV file. Read the binary file and create another binary file that will contain the number of the students whose score is greater than 95 and all the records for those students.
+Unit tests are not required, but the test cases should be identified. The git history should contain at least 3 commits for each task (prototype of the system, several test cases and implementation of the system). Usually it contains more that just 3 commits (several commits for bug-fixing)

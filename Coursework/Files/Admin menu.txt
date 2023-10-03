@@ -1,0 +1,4 @@
+1)Create new product
+2)Change something in available product
+3)Remove product
+4)Show basket	

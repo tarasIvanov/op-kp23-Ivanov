@@ -1,0 +1,12 @@
+1)Set new name
+2)Set new country and producer
+3)Set new price
+4)Set new guarantee
+5)Set new color
+6)(Gadgets)Set new length of wire(CM)
+7)(Device)Set new wage(KG)
+8)(Device)Set new memory capacity(GB)
+9)(PCs)Set new OS
+10)(PCs)Set new processor speed(GHz)
+11)(Mobile)Set new size of display(Inch)	
+12)(Mobile)Set new battery capacity(MaH)
